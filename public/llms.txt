@@ -1,0 +1,20 @@
+# Ankur Gupta
+
+> Backend Developer. The backend behind a better product.
+
+Ankur Gupta is a Computer Science student at the National Institute of Technology Hamirpur focused on backend development, full-stack applications, and building reliable software through practical projects.
+
+## Projects
+- [FATGS](https://ankurgupta.dev/work/fatgs): Faculty Allocation and Timetable Generation System designed to organize academic scheduling requirements involving faculty, classes, subjects, rooms, and weekly time slots.
+- [TT_TRACKER](https://ankurgupta.dev/work/tt_tracker): Academic Timetable Tracking and Management System designed to provide class-wise and faculty-wise timetable views and support schedule changes, cancellations, and room availability checks.
+- [PRISMS](https://ankurgupta.dev/work/prisms): PhD Research & Institutional Scholars Management System supporting the lifecycle of PhD scholars, beginning with a thesis submission module.
+
+## Pages
+- [Portfolio](https://ankurgupta.dev/)
+- [Projects](https://ankurgupta.dev/work)
+- [Journey](https://ankurgupta.dev/stories/journey)
+- [Privacy](https://ankurgupta.dev/privacy)
+
+## Contact
+- Email: ankurgupta.official17@gmail.com
+- GitHub: https://github.com/Ankur17nith

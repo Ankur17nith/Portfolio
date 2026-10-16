@@ -1,0 +1,8 @@
+/* ============================================================
+   Footer.module.css, Minimal visual closer.
+   Just a border-top and small breathing room.
+   ============================================================ */
+
+.footer {
+  border-top: 1px solid var(--border-subtle);
+}

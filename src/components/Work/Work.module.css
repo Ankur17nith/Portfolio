@@ -1,0 +1,511 @@
+/* ============================================================
+   Work.module.css, Alternating side-by-side project cards.
+   Image left on even, image right on odd.
+   Animation #5: "The Lift" on screenshot hover.
+   Animation #6: "The Underline Draw" on link hover.
+   ============================================================ */
+
+.section {
+  padding: var(--space-12) 0;
+}
+
+.container {
+  max-width: var(--max-page);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* -----------------------------------------------------------
+   SECTION HEADER
+   ----------------------------------------------------------- */
+.heading {
+  font-family: var(--font-quicksand), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.filterChip {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background: transparent;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-full);
+  padding: 7px 13px;
+  cursor: pointer;
+  transition: color 180ms var(--ease-standard),
+              border-color 180ms var(--ease-standard),
+              background-color 180ms var(--ease-standard);
+}
+
+.filterChip:hover,
+.filterChipActive {
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+  background-color: var(--surface-secondary);
+}
+
+/* -----------------------------------------------------------
+   PROJECTS LIST
+   ----------------------------------------------------------- */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  margin-top: var(--space-10);
+}
+
+/* -----------------------------------------------------------
+   PROJECT CARD, Mobile: stacked. Desktop: side-by-side.
+   ----------------------------------------------------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: var(--max-wide);
+  margin: 0 auto;
+}
+
+/* -----------------------------------------------------------
+   SCREENSHOT
+   ----------------------------------------------------------- */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  line-height: 0;
+  font-size: 0;
+  flex-shrink: 0;
+  transition: transform 400ms var(--ease-out),
+              box-shadow 400ms var(--ease-out);
+}
+
+
+
+.imageLink {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 600ms var(--ease-out),
+              filter 500ms var(--ease-out);
+  filter: saturate(0.9) contrast(0.95);
+}
+
+.imageWrapper:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.imageWrapper:hover .image {
+  filter: saturate(1) contrast(1);
+}
+
+.imagePlaceholder {
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+    var(--surface-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  line-height: 1.2;
+}
+
+.placeholderEyebrow {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.placeholderName {
+  font-family: var(--font-quicksand), system-ui, sans-serif;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.placeholderTagline {
+  max-width: 320px;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* -----------------------------------------------------------
+   LOCATION BADGE, frosted glass pill on image corner
+   ----------------------------------------------------------- */
+.locationTag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px 5px 9px;
+  background: rgba(10, 10, 12, 0.62);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  color: rgba(255, 255, 255, 0.88);
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 300ms var(--ease-standard);
+}
+
+.locationDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.25);
+  flex-shrink: 0;
+}
+
+/* -----------------------------------------------------------
+   CARD META
+   ----------------------------------------------------------- */
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardNameRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.cardName {
+  font-family: var(--font-quicksand), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+}
+
+.cardRole {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  background-color: var(--accent-subtle);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.cardTagline {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-2);
+}
+
+/* Animation #6: "The Underline Draw" */
+.cardLink {
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-2);
+  transition: color 200ms var(--ease-standard);
+}
+
+.cardLink::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms var(--ease-standard);
+}
+
+.cardLink:hover {
+  color: var(--text-primary);
+}
+
+.cardLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.linkArrow {
+  display: inline-block;
+  transition: transform 200ms var(--ease-standard);
+}
+
+.cardLink:hover .linkArrow {
+  transform: translateX(3px);
+}
+
+.cardDescription {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-secondary);
+  margin-top: var(--space-4);
+}
+
+.cardMetrics {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  margin-top: var(--space-3);
+  letter-spacing: 0.01em;
+}
+
+.playStoreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--text-primary);
+  transition: opacity 200ms var(--ease-standard);
+}
+
+.playStoreLink:hover {
+  opacity: 0.7;
+}
+
+.playStoreIcon {
+  flex-shrink: 0;
+  position: relative;
+  top: 0.5px;
+}
+
+.cardStack {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-3);
+}
+
+.detailsToggle {
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--text-tertiary);
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: var(--space-3);
+  cursor: pointer;
+  transition: color 200ms var(--ease-standard);
+}
+
+.detailsToggle::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms var(--ease-standard);
+}
+
+.detailsToggle:hover {
+  color: var(--text-primary);
+}
+
+.detailsToggle:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.detailsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--border-primary);
+}
+
+.detailsPanel p {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+/* -----------------------------------------------------------
+   RESPONSIVE, Tablet: side-by-side kicks in
+   ----------------------------------------------------------- */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-10);
+  }
+
+  .projects {
+    gap: var(--space-12);
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 44fr 56fr;
+    gap: var(--space-10);
+    align-items: center;
+  }
+
+  /* Odd cards: image goes to the right */
+  .cardReversed .imageWrapper {
+    order: 2;
+  }
+
+  .cardReversed .cardMeta {
+    order: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-24) 0;
+  }
+
+  .projects {
+    gap: var(--space-16);
+  }
+
+  .card {
+    grid-template-columns: 42fr 58fr;
+    gap: var(--space-12);
+  }
+}
+
+/* Featured work reads as a sequence of large, tangible panels. */
+.heading { font-size: clamp(2.6rem, 5.7vw, 5rem); line-height: 1.02; letter-spacing: -.035em; max-width: 13ch; }
+.projects { gap: 80px; margin-top: 42px; }
+.featuredStack, .filteredProjects { display: flex; flex-direction: column; gap: 28px; }
+.card { position: relative; max-width: none; padding: 24px; border: 1px solid var(--border-primary); border-radius: 24px; background: var(--bg-secondary); box-shadow: var(--shadow-lg); }
+.projectCaption { display: flex; justify-content: space-between; grid-column: 1 / -1; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: var(--text-tertiary); padding-bottom: 12px; border-bottom: 1px solid var(--border-primary); }
+.cardName { font-size: clamp(2rem, 3.8vw, 3.3rem); font-weight: 500; letter-spacing: -.035em; }
+.cardNameRow { align-items: flex-start; flex-direction: column; gap: 12px; }
+.cardRole { padding: 0; background: none; white-space: normal; font-size: 14px; }
+.cardTagline { font-size: 17px; color: var(--text-primary); line-height: 1.4; margin-top: 18px; }
+.cardDescription { font-size: 15px; line-height: 1.7; }
+.cardMetrics { padding-top: 16px; border-top: 1px solid var(--border-primary); font-size: 15px; }
+.cardStack { font-size: 14px; line-height: 1.65; }
+.cardLink { font-size: 14px; }
+.imageWrapper { border-radius: 14px; }
+.image { aspect-ratio: 16 / 10; object-fit: contain; object-position: center; filter: none; transition: transform 650ms var(--ease-reveal); }
+.detailsToggle { font-size: 14px; padding: 10px 0; color: var(--text-primary); }
+.detailsPanel { grid-column: 1 / -1; }
+.moreWork { display: flex; flex-direction: column; gap: 28px; }
+.moreLabel { font-family: var(--font-quicksand), sans-serif; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -.035em; margin-bottom: 10px; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .imageLink:hover .image { transform: scale(1.025); } }
+@media (min-width: 768px) {
+  .card, .cardReversed { grid-template-columns: 1.2fr 1fr; gap: 26px 40px; padding: 30px; }
+  .cardReversed { grid-template-columns: 1fr 1.2fr; }
+  .cardReversed .imageWrapper { order: initial; grid-column: 2; grid-row: 2; }
+  .cardReversed .cardMeta { order: initial; grid-column: 1; grid-row: 2; }
+  .cardMeta { min-width: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .featuredStack { gap: clamp(96px, 20svh, 240px); padding-bottom: 72px; }
+  .projectScene { position: relative; }
+  .featuredStack[data-deck="on"] .projectScene { position: sticky; top: var(--deck-top, 88px); }
+  .featured { min-height: min(610px, calc(100svh - 180px)); transform-origin: center top;  }
+  .featuredStack:has(.expanded) .projectScene, .featuredStack[data-deck="off"] .projectScene { position: relative; top: 0; }
+  .featuredStack:has(.expanded) .featured, .featuredStack[data-deck="off"] .featured { transform: none; }
+}
+@media print {
+  .projectScene { position: static !important; }
+  .featured { transform: none !important; min-height: auto; }
+  .projectCaption { display: none; }
+}
+
+.image { object-fit: contain; background: color-mix(in srgb, var(--bg-primary) 85%, black); }
+.card[data-project="maddycustom"] { background: color-mix(in srgb, var(--bg-secondary) 94%, #B98C91); }
+.card[data-project="spyll"] { background: color-mix(in srgb, var(--bg-secondary) 94%, #76AFA9); }
+.story { display: grid; gap: 20px; }
+.story h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 8px; }
+.flow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.flow li { font-size: 14px; padding: 14px 10px; background: var(--bg-primary); border: 1px solid var(--border-primary); border-radius: 8px; line-height: 1.4; }
+.flow li span { display: block; font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
+.moreWork .image { aspect-ratio: 16 / 10; }
+
+@media (min-width: 1024px) and (min-height: 680px) and (max-height: 819px) {
+  .featured { padding: 24px; gap: 18px 32px; }
+  .featured .cardName { font-size: 36px; }
+  .featured .cardTagline { font-size: 15px; margin-top: 12px; }
+  .featured .cardDescription { font-size: 16px; line-height: 1.65; }
+  .featured .cardMetrics { font-size: 14px; padding-top: 12px; }
+}
+
+/* Only the deck surface moves. Its contents stay visible and ready. */
+.featured { backface-visibility: hidden; }
+.imageWrapper:hover .image { filter: none; }
+
+/* The engineering detail gets the full width, separate from the overview. */
+.ownershipLabel,.outcomeLabel { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: var(--text-secondary); }
+.ownershipLabel { margin-top: 20px; }.cardDescription { margin-top: 7px; font-size: 16px; }.outcomeLabel { margin-bottom: 8px; }
+.detailsToggle { border: 1px solid var(--border-primary); border-radius: 9px; padding: 12px 16px; margin-top: 22px; min-height: 44px; background: color-mix(in srgb, var(--bg-primary) 40%, transparent); }
+.detailsToggle::after { display: none; }.detailsToggle:hover { background: var(--bg-primary); }.detailsToggle:focus-visible,.filterChip:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.detailsPanel { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--border-primary); padding: 28px 0 0; margin: 0; gap: 20px; }.detailsPanel p { max-width: 85ch; font-size: 16px; }.story { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border-primary); }.flow { grid-column: 1 / -1; grid-template-columns: repeat(4,minmax(0,1fr)); }.story h4 { color: var(--text-secondary); }.story p { font-size: 15px; }
+@media(max-width:767px) { .story { grid-template-columns: 1fr; }.flow { grid-template-columns: repeat(2,minmax(0,1fr)); }.card { padding: 22px; }.detailsToggle { width: 100%; text-align: left; }.cardDescription { font-size: 16px; }.cardStack { line-height: 1.7; } }
+.featuredStack:has(:focus-visible) .projectScene { position: relative; top: 0; }
+.featuredStack:has(:focus-visible) .featured { transform: none !important; }
+
+/* Original screenshots sit inside a quiet, dimensional display. */
+.imageWrapper { --scene-warm:#e6bca7; --scene-cool:#d4daca; padding:32px 24px 18px; border:1px solid color-mix(in srgb,var(--border-primary) 65%,transparent); border-radius:20px; background:radial-gradient(ellipse at 75% 10%,color-mix(in srgb,var(--scene-warm) 48%,transparent),transparent 65%),linear-gradient(155deg,color-mix(in srgb,var(--bg-primary) 82%,var(--scene-cool)),var(--bg-secondary)); perspective:1200px; isolation:isolate; }
+.imageWrapper::before { content:"";position:absolute;left:8%;right:8%;bottom:40px;height:22%;background:radial-gradient(ellipse,rgba(25,23,20,.23),transparent 68%);pointer-events:none;z-index:-1; }
+.device { position:relative;padding:12px 9px 9px;border-radius:18px;background:linear-gradient(145deg,#464747,#171b1d 24%,#252526 85%,#625653);border:1px solid #96918b;box-shadow:0 2px 0 #bdb7b0,0 16px 25px -14px rgba(23,22,21,.65),inset 0 0 0 2px #29292b;transform:rotateY(-4deg) rotateX(2deg);transition:transform 550ms var(--ease-reveal); }
+.camera { position:absolute;width:3px;height:3px;border-radius:50%;top:5px;left:50%;background:#090e12;box-shadow:inset 0 0 1px #829099; }
+.device .image { display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;border-radius:9px;background:#f5f3ef;filter:none;transform:none; }
+.imageLink { overflow:hidden;border-radius:9px; }.imageCaption { display:flex;justify-content:space-between;gap:12px;margin-top:22px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;line-height:1.4;color:var(--text-secondary); }.locationTag { position:static;display:inline-flex;margin-top:12px;padding:4px 8px;font-size:11px;line-height:1.3;background:color-mix(in srgb,var(--bg-primary) 80%,transparent);color:var(--text-secondary);border-color:var(--border-primary);backdrop-filter:none; }
+.card[data-project="avana"] .imageWrapper { --scene-warm:#c5d2a7;--scene-cool:#b9c9c3; }.card[data-project="dailicle"] .imageWrapper { --scene-warm:#cfb29c;--scene-cool:#d1beb5; }.card[data-project="autoremov"] .imageWrapper { --scene-warm:#b8c2dd;--scene-cool:#c2b8cf; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) { .imageWrapper:hover .device { transform:rotateY(0) rotateX(0) translateY(-3px); }.imageLink:hover .image { transform:none; } }
+@media(max-width:767px) { .imageWrapper { padding:22px 14px 14px; }.device { transform:none;padding:10px 6px 6px;border-radius:13px; }.device .image,.imageLink { border-radius:7px; }.imageCaption { margin-top:17px;font-size:10px; } }
+@media(prefers-reduced-motion:reduce) { .device { transform:none;transition:none; } }

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <rect width="100%" height="100%" fill="#181a19"/>
+  <rect x="2" y="2" width="1596" height="896" fill="none" stroke="#2a302b" stroke-width="2"/>
+  <rect x="0" y="0" width="1600" height="42" fill="#131514"/>
+  <circle cx="24" cy="21" r="5" fill="#4d544f"/>
+  <circle cx="40" cy="21" r="5" fill="#3d443f"/>
+  <circle cx="56" cy="21" r="5" fill="#303632"/>
+  <line x1="0" y1="42" x2="1600" y2="42" stroke="#2a302b" stroke-width="1"/>
+  <g fill="none" stroke="#222723" stroke-width="1">
+    <line x1="0" y1="225" x2="1600" y2="225"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="675" x2="1600" y2="675"/>
+    <line x1="400" y1="42" x2="400" y2="900"/>
+    <line x1="800" y1="42" x2="800" y2="900"/>
+    <line x1="1200" y1="42" x2="1200" y2="900"/>
+  </g>
+  <rect x="540" y="380" width="520" height="140" rx="8" fill="#141715" stroke="#374039" stroke-width="1"/>
+  <text x="800" y="425" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#e4e8e0" text-anchor="middle" letter-spacing="0.5">TT_TRACKER · Timetable Dashboard</text>
+  <text x="800" y="455" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#889283" text-anchor="middle">Academic Timetable Tracking and Management System</text>
+  <text x="800" y="485" font-family="monospace, Courier" font-size="11" fill="#586354" text-anchor="middle">Screenshot Area · Ready for User Asset</text>
+</svg>

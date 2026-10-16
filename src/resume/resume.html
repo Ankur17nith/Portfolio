@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="description" content="Ankur Gupta, Computer Science student at NIT Hamirpur focused on backend development." />
+<title>Ankur Gupta | Backend Developer</title>
+<style>
+  :root { --ink:#172321; --body:#303b39; --muted:#596561; --accent:#285c50; --rule:#d8e0dc; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  @page { size:A4; margin:0; }
+  html,body { width:210mm; }
+  body { padding:10mm 13mm 10mm; background:#fff; color:var(--body); font-family:Arial,Helvetica,sans-serif; font-size:10pt; line-height:1.27; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  a { color:inherit; text-decoration:none; }
+  h1,h2,h3,strong { color:var(--ink); }
+  h1 { font-size:28pt; font-weight:700; line-height:1; letter-spacing:-1.1pt; }
+  .position { font-size:12pt; font-weight:600; color:var(--accent); margin-top:2.1mm; }
+  .position span { font-weight:400; color:var(--muted); }
+  .contact { display:flex; flex-wrap:wrap; gap:1.5mm 3.2mm; font-size:8.6pt; margin-top:3mm; color:var(--muted); }
+  .contact a { border-bottom:.35pt solid var(--rule); }
+  .summary { border-top:1.5pt solid var(--accent); padding-top:3mm; margin-top:3mm; font-size:10pt; line-height:1.36; }
+  section { margin-top:2.5mm; }
+  h2 { display:flex; align-items:center; gap:3mm; font-size:10pt; letter-spacing:0; font-weight:700; margin-bottom:1.6mm; color:var(--accent); }
+  h2::after { content:""; height:.5pt; background:var(--rule); flex:1; }
+  .job { margin-bottom:3.2mm; break-inside:avoid; }
+  .job:last-child { margin-bottom:0; }
+  .job-head { display:flex; align-items:baseline; justify-content:space-between; gap:4mm; }
+  h3 { font-size:12pt; font-weight:700; letter-spacing:-.15pt; }
+  .dates { font-size:8.5pt; color:var(--muted); white-space:nowrap; }
+  .role { display:flex; justify-content:space-between; align-items:baseline; gap:3mm; font-size:9.4pt; margin: .4mm 0 1.5mm; color:var(--ink); }
+  .story { font-size:8pt; white-space:nowrap; color:var(--accent); border-bottom:.35pt solid var(--rule); }
+  ul { list-style:disc; padding-left:3.8mm; }
+  li { padding-left:.6mm; margin-bottom:1.1mm; }
+  li:last-child { margin-bottom:0; }
+  li::marker { color:var(--accent); font-size:7pt; }
+  strong { font-weight:700; }
+  .project { margin-bottom:2mm; break-inside:avoid; }
+  .project:last-child { margin-bottom:0; }
+  .project strong { font-size:9.6pt; }
+  .project .meta { color:var(--muted); font-size:8.1pt; }
+  .skills p { margin-bottom:1mm; font-size:9pt; }
+  .skills strong { display:inline; margin-right:1mm; }
+  .education { break-inside:avoid; display:flex; justify-content:space-between; gap:4mm; font-size:9pt; }
+  .education small { display:block; font-size:8.5pt; margin-top:.5mm; color:var(--muted); }
+  @media screen { body { min-height:297mm; margin:20px auto; box-shadow:0 5px 40px #17232112; } html { width:auto; background:#edf0ee; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ankur Gupta</h1>
+  <p class="position">Backend Developer <span>· Computer Science Student at NIT Hamirpur</span></p>
+  <div class="contact">
+    <a href="mailto:ankurgupta.official17@gmail.com">ankurgupta.official17@gmail.com</a>
+    <a href="https://github.com/Ankur17nith">github.com/Ankur17nith</a>
+  </div>
+  <p class="summary">Computer Science student at the National Institute of Technology Hamirpur focused on backend development, full-stack applications, and building reliable software through practical projects.</p>
+</header>
+
+<section aria-labelledby="education">
+  <h2 id="education">Education</h2>
+  <div class="education">
+    <div>
+      <strong>National Institute of Technology Hamirpur</strong>
+      <small>Bachelor of Technology in Computer Science and Engineering</small>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="projects">
+  <h2 id="projects">Featured Projects</h2>
+  <div class="project">
+    <div class="job-head">
+      <h3>FATGS — Faculty Allocation and Timetable Generation System</h3>
+      <span class="dates"><a href="https://github.com/Ankur17nith/FATGS">GitHub</a></span>
+    </div>
+    <div class="role"><span>Academic Timetable Generation</span></div>
+    <ul>
+      <li>Designed and implemented a timetable generation system to organize academic scheduling requirements involving faculty, classes, subjects, rooms, and weekly time slots.</li>
+      <li>Modeled academic entities and scheduling constraints to structure slot allocation workflows and generate organized timetable outputs.</li>
+    </ul>
+  </div>
+  <div class="project">
+    <div class="job-head">
+      <h3>TT_TRACKER — Academic Timetable Tracking and Management System</h3>
+      <span class="dates"><a href="https://github.com/itzzadi04/TT_TRACKER">GitHub</a></span>
+    </div>
+    <div class="role"><span>Full-Stack Timetable Management</span></div>
+    <ul>
+      <li>Full-stack academic timetable management project designed to provide class-wise and faculty-wise timetable views.</li>
+      <li>Supports schedule adjustments, class cancellations, and room availability checks with React, Node.js, Express.js, and MongoDB.</li>
+    </ul>
+  </div>
+  <div class="project">
+    <div class="job-head">
+      <h3>PRISMS — PhD Research &amp; Institutional Scholars Management System</h3>
+      <span class="dates">Academic Administration</span>
+    </div>
+    <div class="role"><span>Institutional Workflow Platform</span></div>
+    <ul>
+      <li>Academic administration project intended to support the lifecycle of PhD scholars, beginning with a thesis submission module.</li>
+      <li>Designed for scholar authentication using institutional college Gmail accounts and structured digital submission workflows.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="skills" aria-labelledby="skills">
+  <h2 id="skills">Technical Skills</h2>
+  <p><strong>Languages:</strong> C and C++, JavaScript and TypeScript, HTML and CSS</p>
+  <p><strong>Backend &amp; Databases:</strong> Node.js, Express.js, MongoDB and Mongoose</p>
+  <p><strong>Frontend &amp; Styling:</strong> React, Tailwind CSS</p>
+  <p><strong>Tools &amp; Platforms:</strong> Git and GitHub, Postman, Figma</p>
+</section>
+
+</body>
+</html>

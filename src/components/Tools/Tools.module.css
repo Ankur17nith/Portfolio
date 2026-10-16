@@ -1,0 +1,100 @@
+/* ============================================================
+   Tools.module.css, "What I Build With" section
+   Clean text grid. Scannable in 10 seconds.
+   ============================================================ */
+
+.section {
+  padding: var(--space-12) 0;
+  background-color: var(--bg-subtle);
+}
+
+.container {
+  max-width: var(--max-page);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.heading {
+  font-family: var(--font-quicksand), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+}
+
+.divider {
+  display: none;
+}
+
+/* -----------------------------------------------------------
+   GRID
+   ----------------------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.columnHeading {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.columnItem {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  line-height: var(--leading-normal);
+}
+
+/* -----------------------------------------------------------
+   ALSO LINE
+   ----------------------------------------------------------- */
+.also {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-6);
+}
+
+/* -----------------------------------------------------------
+   RESPONSIVE
+   ----------------------------------------------------------- */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-10);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-24) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.grid { gap: 30px; margin-top: 30px; }.column { border-top: 1px solid var(--border-primary); padding-top: 22px; gap: 12px; }.columnHeading { font-size: 17px; letter-spacing: -.02em; }.columnItem { font-size: 16px; line-height: 1.7; }.also { font-size: 14px; }
+@media(min-width:1024px) { .grid { grid-template-columns: repeat(3,1fr); gap: 40px; } }
+@media(max-width:600px) { .grid { grid-template-columns: 1fr; } }

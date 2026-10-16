@@ -1,0 +1,229 @@
+"use client";
+
+import { FormEvent, useEffect, useRef, useState } from "react";
+import styles from "./TestimonialForm.module.css";
+
+type FormState = "idle" | "submitting" | "success" | "error";
+const DRAFT_KEY = "portfolio-testimonial-draft";
+const DRAFT_RETENTION_MS = 7 * 24 * 60 * 60 * 1000;
+
+type TestimonialDraft = {
+  name: string;
+  role: string;
+  company: string;
+  testimonial: string;
+  email: string;
+  consent: boolean;
+  expiresAt: number;
+};
+
+export function TestimonialForm() {
+  const [state, setState] = useState<FormState>("idle");
+  const [message, setMessage] = useState("");
+  const [draftStatus, setDraftStatus] = useState(
+    "Draft saves on this device for up to seven days.",
+  );
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const form = formRef.current;
+    try {
+      const savedDraft = localStorage.getItem(DRAFT_KEY);
+      if (!form || !savedDraft) return;
+      const draft = JSON.parse(savedDraft) as Partial<TestimonialDraft>;
+      if (typeof draft.expiresAt !== "number" || draft.expiresAt <= Date.now()) {
+        localStorage.removeItem(DRAFT_KEY);
+        setDraftStatus("The previous draft expired and was cleared.");
+        return;
+      }
+      const textFields: Array<
+        keyof Omit<TestimonialDraft, "consent" | "expiresAt">
+      > = [
+        "name",
+        "role",
+        "company",
+        "testimonial",
+        "email",
+      ];
+
+      textFields.forEach((fieldName) => {
+        const field = form.elements.namedItem(fieldName);
+        if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) {
+          field.value = typeof draft[fieldName] === "string" ? draft[fieldName] : "";
+        }
+      });
+
+      const consent = form.elements.namedItem("consent");
+      if (consent instanceof HTMLInputElement) consent.checked = draft.consent === true;
+      setDraftStatus("Saved draft restored from this device.");
+    } catch {
+      try {
+        localStorage.removeItem(DRAFT_KEY);
+      } catch {
+        // Storage may be unavailable in privacy-restricted browsers.
+      }
+    }
+  }, []);
+
+  function saveDraft(form: HTMLFormElement) {
+    const formData = new FormData(form);
+    const draft: TestimonialDraft = {
+      name: String(formData.get("name") || ""),
+      role: String(formData.get("role") || ""),
+      company: String(formData.get("company") || ""),
+      testimonial: String(formData.get("testimonial") || ""),
+      email: String(formData.get("email") || ""),
+      consent: formData.get("consent") === "on",
+      expiresAt: Date.now() + DRAFT_RETENTION_MS,
+    };
+
+    try {
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+      setDraftStatus("Draft saved on this device for up to seven days.");
+    } catch {
+      setDraftStatus("Draft saving is unavailable in this browser.");
+    }
+  }
+
+  function clearDraft() {
+    try {
+      localStorage.removeItem(DRAFT_KEY);
+    } catch {
+      // The form should still reset if browser storage is unavailable.
+    }
+    setDraftStatus("Draft cleared.");
+    setMessage("");
+    setState("idle");
+  }
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setState("submitting");
+    setMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get("name"),
+      role: formData.get("role"),
+      company: formData.get("company"),
+      testimonial: formData.get("testimonial"),
+      email: formData.get("email"),
+      consent: formData.get("consent") === "on",
+      website: formData.get("website"),
+    };
+
+    try {
+      const response = await fetch("/api/testimonials", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = (await response.json()) as { message?: string };
+
+      if (!response.ok) throw new Error(result.message);
+
+      try {
+        localStorage.removeItem(DRAFT_KEY);
+      } catch {
+        // Submission succeeded, so storage cleanup must not hide success.
+      }
+      form.reset();
+      setState("success");
+    } catch (error) {
+      setMessage(
+        error instanceof Error && error.message
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
+      setState("error");
+    }
+  }
+
+  if (state === "success") {
+    return (
+      <div className={styles.success} role="status">
+        <span className={styles.successMark} aria-hidden="true">✓</span>
+        <p className={styles.successEyebrow}>Received with gratitude</p>
+        <h2>Thank you for taking the time.</h2>
+        <p>
+          Your words are safely submitted and will only appear after a manual
+          review. I genuinely appreciate your support.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      ref={formRef}
+      className={styles.form}
+      onSubmit={handleSubmit}
+      onChange={(event) => saveDraft(event.currentTarget)}
+      onReset={clearDraft}
+    >
+      <div className={styles.row}>
+        <label className={styles.field}>
+          <span>Your name <b>*</b></span>
+          <input name="name" type="text" placeholder="e.g. Alex Morgan" maxLength={100} required />
+        </label>
+        <label className={styles.field}>
+          <span>Your role <b>*</b></span>
+          <input name="role" type="text" placeholder="e.g. Founder & CTO" maxLength={120} required />
+        </label>
+      </div>
+
+      <label className={styles.field}>
+        <span>Company or startup <b>*</b></span>
+        <input name="company" type="text" placeholder="e.g. Acme Labs" maxLength={120} required />
+      </label>
+
+      <label className={styles.field}>
+        <span>Your testimonial <b>*</b></span>
+        <textarea
+          name="testimonial"
+          placeholder="What was it like working together? You might mention the problem, how I helped, and the outcome. A few honest sentences are perfect."
+          rows={7}
+          minLength={20}
+          maxLength={1200}
+          required
+        />
+        <small>No need to make it formal, specific and honest is wonderful.</small>
+      </label>
+
+      <label className={styles.field}>
+        <span>Email <b>*</b></span>
+        <input name="email" type="email" placeholder="you@company.com" maxLength={254} required />
+        <small>This is only for verification. It will never be shown publicly.</small>
+      </label>
+
+      <label className={styles.honeypot} aria-hidden="true">
+        Website
+        <input name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </label>
+
+      <label className={styles.consent}>
+        <input name="consent" type="checkbox" required />
+        <span>
+          Yes, you may display my testimonial, name, role, and company on your
+          portfolio. I understand it will be reviewed before publishing.
+        </span>
+      </label>
+
+      {state === "error" && <p className={styles.error} role="alert">{message}</p>}
+
+      <div className={styles.submitRow}>
+        <div className={styles.actions}>
+          <button className={styles.submitButton} type="submit" disabled={state === "submitting"}>
+            {state === "submitting" ? "Sending…" : "Share testimonial"}
+            {state !== "submitting" && <span aria-hidden="true">→</span>}
+          </button>
+          <button className={styles.resetButton} type="reset" disabled={state === "submitting"}>
+            Reset form
+          </button>
+        </div>
+        <p aria-live="polite">{draftStatus}</p>
+      </div>
+    </form>
+  );
+}
