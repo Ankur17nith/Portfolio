@@ -10,7 +10,7 @@ test('held Space and arrows never scroll the focused room; leaving releases move
  for(const key of ['ArrowDown','ArrowUp']){await page.keyboard.down(key);await page.keyboard.down(key);await page.waitForTimeout(100);await page.keyboard.up(key);}
  expect(await page.evaluate(()=>scrollY)).toBe(y);await page.waitForTimeout(1000);
  await page.keyboard.down('ArrowLeft');await page.waitForTimeout(80);await page.keyboard.press('Tab');await page.waitForTimeout(200);
- const actor=page.getByLabel('Lucky’s playable character');const first=await actor.evaluate(el=>getComputedStyle(el).transform);
+ const actor=page.getByLabel('Playable character');const first=await actor.evaluate(el=>getComputedStyle(el).transform);
  await page.waitForTimeout(250);expect(await actor.evaluate(el=>getComputedStyle(el).transform)).toBe(first);await page.keyboard.up('ArrowLeft');
 });
 test('Space still scrolls normally outside the room and dismissing dialogue restores game focus',async({page})=>{

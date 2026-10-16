@@ -16,7 +16,7 @@ Generated in the user's ElevenLabs account on October 8–9, 2026. Music was gen
 
 ## Integration still required after export
 
-Audition variations; trim leading silence; gently normalize cue peaks; verify loop seams and crossfade music. Download locally into `public/game/audio`. Keep music off and SFX on by default. Use separate persisted booleans in `lucky-audio` (no expiry), respect browser audio activation, pause when hidden, resume only if opted in, crossfade room/exploration on navigation. Browser storage can be cleared by the user or browser; persistence cannot be guaranteed literally forever.
+Audition variations; trim leading silence; gently normalize cue peaks; verify loop seams and crossfade music. Download locally into `public/game/audio`. Keep music off and SFX on by default. Use separate persisted booleans in `portfolio-audio` (no expiry), respect browser audio activation, pause when hidden, resume only if opted in, crossfade room/exploration on navigation. Browser storage can be cleared by the user or browser; persistence cannot be guaranteed literally forever.
 
 Current site retains its existing short Web Audio interaction tone, now on by default and persisted. The music preference is initialized to false; no nonfunctional music toggle is shown while exported tracks are unavailable.
 
@@ -27,7 +27,7 @@ ElevenLabs exports remain unavailable behind the paid download gate. These are
 synthesized locally, not ElevenLabs recordings. The room has a sparse 76 BPM
 motif; opening a section changes to a 112 BPM adventure variation. Discovery,
 footstep, takeoff and landing effects are separate from music. Sound defaults on,
-music defaults off, with independent `lucky-audio` localStorage preferences.
+music defaults off, with independent `portfolio-audio` localStorage preferences.
 Playback unlocks on the first user gesture, pauses in hidden tabs and cleans up
 on unmount. Storage persists until the visitor clears site data. The controls
 are in the room footer on desktop and mobile.

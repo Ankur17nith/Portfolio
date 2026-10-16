@@ -5,7 +5,7 @@ env.loadEnvConfig(process.cwd());
 const client = new MongoClient(process.env.MONGODB_URI);
 try {
   await client.connect();
-  const db = client.db(process.env.MONGODB_DATABASE || 'luckyportfolio');
+  const db = client.db(process.env.MONGODB_DATABASE || 'portfolio');
   const match = { expiresAt: { $gt: new Date() } };
   const visits = await db.collection('pip_visits').countDocuments(match);
   const [audience] = await db.collection('pip_visits').aggregate([

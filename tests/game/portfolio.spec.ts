@@ -150,7 +150,7 @@ test("cold loading never reveals an unpositioned character", async ({
     await route.continue();
   });
   await page.goto("/", { waitUntil: "domcontentloaded" });
-  const actor = page.getByLabel("Lucky’s playable character");
+  const actor = page.getByLabel("Playable character");
   await expect(page.locator("#playable-room")).toHaveAttribute("data-ready", "false");
   await expect(actor).toBeHidden();
   await page.keyboard.press("Space");

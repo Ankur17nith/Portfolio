@@ -84,7 +84,7 @@ test('pipe entry clips the character at the mouth and restores it on exit',async
  await page.clock.install();await page.setViewportSize({width:1440,height:1000});await page.goto('/');
  const pipe=page.getByRole('button',{name:'Enter green pipe arcade'});await expect(pipe).toBeVisible();
  await pipe.click();await page.clock.runFor(350);
- const actor=page.locator('[aria-label="Lucky’s playable character"]');
+ const actor=page.locator('[aria-label="Playable character"]');
  const geometry=await actor.evaluate(el=>{const c=getComputedStyle(el);const m=new DOMMatrix(c.transform);return {bottom:m.m42+parseFloat(c.translate.split(' ')[1])+272-parseFloat(c.clipPath.split(' ')[2]),clip:c.clipPath};});
  expect(geometry.clip).not.toBe('none');expect(geometry.bottom).toBeLessThanOrEqual(751);
  await page.screenshot({path:'output/design/arcade/pipe-entry-fixed.png'});

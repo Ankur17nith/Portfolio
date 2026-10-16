@@ -1,6 +1,5 @@
 import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { workStories, getWorkStory } from "@/lib/work-stories";

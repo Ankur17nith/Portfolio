@@ -10,7 +10,8 @@ export async function limitBuddyRequests(request: Request) {
   await indexPromise;
   // Vercel overwrites this header. Never store the visitor's raw IP address.
   const ip = request.headers.get("x-vercel-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
-  const identity = createHmac("sha256", process.env.OPENAI_API_KEY!).update(ip).digest("hex");
+  const secret = process.env.PIP_IDENTITY_SECRET || process.env.GEMINI_API_KEY || "pip-identity-secret";
+  const identity = createHmac("sha256", secret).update(ip).digest("hex");
   const day = Math.floor(Date.now() / 86400000);
   const hour = Math.floor(Date.now() / 3600000);
   const configured = Number(process.env.PIP_DAILY_LIMIT || 500);

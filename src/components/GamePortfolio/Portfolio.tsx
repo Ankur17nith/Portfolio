@@ -1,4 +1,3 @@
-import { ReviewQuote } from "./ReviewQuote";
 import { ProjectShowcase } from "./ProjectShowcase";
 import { ThemeControl } from "./ThemeControl";
 import { GithubActivity } from "./GithubActivity";
@@ -13,7 +12,7 @@ import { experience, socials } from "@/lib/data";
 import { notes } from "@/components/Journal/JournalFrame";
 import styles from "./Portfolio.module.css";
 
-export function Portfolio({ testimonials = [] }: { testimonials?: PublicTestimonial[] }) {
+export function Portfolio({}: { testimonials?: PublicTestimonial[] } = {}) {
   return (
     <div className={styles.site}>
       <SmoothScroll />
@@ -73,7 +72,7 @@ export function Portfolio({ testimonials = [] }: { testimonials?: PublicTestimon
               <p className={styles.introduction}>
                 The backend behind a better product.
                 <br />
-                I'm a Computer Science student at NIT Hamirpur focused on backend
+                I&apos;m a Computer Science student at NIT Hamirpur focused on backend
                 development, full-stack applications, and building reliable
                 software through practical projects.
               </p>
@@ -171,8 +170,8 @@ export function Portfolio({ testimonials = [] }: { testimonials?: PublicTestimon
             <span className={styles.eyebrow}>A LITTLE BACKGROUND</span>
             <h2>Learning by building.</h2>
             <p>
-              I'm Ankur Gupta, a Computer Science student at the National
-              Institute of Technology Hamirpur. I'm interested in backend
+              I&apos;m Ankur Gupta, a Computer Science student at the National
+              Institute of Technology Hamirpur. I&apos;m interested in backend
               engineering, full-stack development, databases, and understanding
               how software systems work beyond the user interface.
             </p>
@@ -184,7 +183,7 @@ export function Portfolio({ testimonials = [] }: { testimonials?: PublicTestimon
               software.
             </p>
             <p>
-              I'm continuing to strengthen my programming fundamentals,
+              I&apos;m continuing to strengthen my programming fundamentals,
               backend development skills, and understanding of software
               architecture through hands-on projects.
             </p>
@@ -199,7 +198,7 @@ export function Portfolio({ testimonials = [] }: { testimonials?: PublicTestimon
         <section id="contact" className={`${styles.section} ${styles.contact}`}>
           <div>
             <span className={styles.eyebrow}>04 / THE NEXT CONVERSATION</span>
-            <h2>Let's build something useful.</h2>
+            <h2>Let&apos;s build something useful.</h2>
             <p>
               Computer Science student at NIT Hamirpur focused on backend
               development.

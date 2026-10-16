@@ -1,6 +1,6 @@
 # The room
 
-A playable, touch-first 2D portfolio for Lucky Solanki. Built into the existing Next.js application, with no game engine or external runtime service.
+A playable, touch-first 2D portfolio for Ankur Gupta. Built into the existing Next.js application, with no game engine or external runtime service.
 
 ## Run
 

@@ -3,7 +3,6 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { getWorkStory } from "@/lib/work-stories";
 import { siteConfig } from "@/lib/data";
-import { shareImage } from "@/lib/seo";
 
 export const runtime = "nodejs";
 const pages: Record<string, { heading: string; label: string }> = {

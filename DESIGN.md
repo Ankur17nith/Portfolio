@@ -1,4 +1,4 @@
-# Lucky Solanki — 2026 Portfolio Design Specification
+# Ankur Gupta — 2026 Portfolio Design Specification
 
 > *"A portfolio is not a page. It's a signal."*
 >
@@ -37,7 +37,7 @@
 
 ### This Is Not a Portfolio. It's a Product.
 
-The site should feel like opening a well-crafted tool — not reading a resume, not browsing a template. The visitor should experience the same intentionality that goes into the software Lucky ships. Every decision — color, word, pixel of whitespace — is a product decision.
+The site should feel like opening a well-crafted tool — not reading a resume, not browsing a template. The visitor should experience the same intentionality that goes into the software Ankur ships. Every decision — color, word, pixel of whitespace — is a product decision.
 
 > *"Design is the silent ambassador of your brand."* — Paul Rand
 
@@ -646,7 +646,7 @@ Three layers because real-world shadows have ambient occlusion (tight, dark), pe
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  Lucky Solanki                     About  Work  Contact  ◐   │
+│  Ankur Gupta                     About  Work  Contact  ◐   │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -663,7 +663,7 @@ Scrolled state:  var(--bg-primary) at 88% opacity + backdrop-filter: blur(12px)
                  + 1px bottom border: var(--border-subtle)
 Transition:      200ms --ease-standard
 
-Left:  "Lucky Solanki"
+Left:  "Ankur Gupta"
        Font: Quicksand 600, --text-sm
        Color: --text-primary
        Letter-spacing: --tracking-wide
@@ -737,7 +737,7 @@ The hero uses a **Z-pattern** layout — natural for landing sections:
 │                                                                  │
 │                                                                  │
 │                                                                  │
-│   Lucky Solanki                          ┌────────────────┐      │
+│   Ankur Gupta                          ┌────────────────┐      │
 │                                          │                │      │
 │   I build products                       │   [PHOTO]      │      │
 │   people actually use.                   │                │      │
@@ -763,7 +763,7 @@ The hero uses a **Z-pattern** layout — natural for landing sections:
 │    │    [PHOTO]     │    │
 │    └────────────────┘    │
 │                          │
-│    Lucky Solanki         │
+│    Ankur Gupta         │
 │                          │
 │    I build products      │
 │    people actually       │
@@ -785,7 +785,7 @@ The hero uses a **Z-pattern** layout — natural for landing sections:
 
 #### Name Badge
 ```
-Text:            "Lucky Solanki"
+Text:            "Ankur Gupta"
 Font:            Quicksand 500
 Size:            --text-md (18px)
 Color:           --text-secondary
@@ -879,7 +879,7 @@ The primary CTA is a text link, not a button — because a filled button would v
 #### Photo
 
 ```
-Image:          lucky.jpg
+Image:          avatar.svg
 Size:           280×340px desktop / 240×290px tablet / 200×240px mobile
 Border-radius:  --radius-xl (24px)
 Object-fit:     cover
@@ -923,13 +923,13 @@ Target:          ~85–92vh on desktop. NOT explicitly 100vh.
 
 ### Purpose
 
-Expand on who Lucky is — but only enough to convert interest into trust. The About section is a **trailer**, not the movie. Three paragraphs, three experience cards. Done.
+Expand on who Ankur is — but only enough to convert interest into trust. The About section is a **trailer**, not the movie. Three paragraphs, three experience cards. Done.
 
 ### Cognitive Load Consideration
 
 Working memory holds ~4 chunks. This section presents exactly three pieces of information:
-1. A positioning statement (who Lucky is)
-2. A brief narrative (what Lucky has done)
+1. A positioning statement (who Ankur is)
+2. A brief narrative (what Ankur has done)
 3. Visual proof (three experience cards)
 
 ### Section Label
@@ -1026,7 +1026,7 @@ Each card:
 
 1. **No "passion" or "love" language.** "Passionate about technology" is a null statement. EVERYONE claims passion. Instead: show what was built.
 2. **Specific > generic.** "50K+ monthly users" > "scalable systems." "7000+ hours" > "extensive experience."
-3. **Present tense leads.** Start with what Lucky is doing NOW. Current work → past proof → origin story.
+3. **Present tense leads.** Start with what Ankur is doing NOW. Current work → past proof → origin story.
 4. **No more than 3 short paragraphs.** If the About section requires scrolling on desktop, it's too long.
 5. **No "passionate problem solver" energy.** No "I thrive on challenges." No "Detail-oriented." These are LinkedIn noise. The portfolio speaks through work, not adjectives.
 
@@ -1077,7 +1077,7 @@ Subtext:  "Products I've built, scaled, and shipped."
 
 | # | Project | Why this position |
 |---|---|---|
-| 1 | **Spyll** (spyll.in) | The current thing. Shows where Lucky's energy is NOW. Forward-looking. |
+| 1 | **Spyll** (spyll.in) | The current thing. Shows where Ankur's energy is NOW. Forward-looking. |
 | 2 | **MaddyCustom** (maddycustom.com) | The biggest accomplishment. 50K+ users. Real revenue. Undeniable proof. |
 | 3 | **Blitzit — MCP Integration** | Shows high-level engineering within a team. Not just solo projects. |
 | 4 | **Dailicle** | Optional. Shows product thinking, writing, philosophy. Adds dimension beyond "just code." |
@@ -1273,7 +1273,7 @@ Kahneman's research: people remember the **peak** and the **end** of an experien
 │  Have a project, a role, or just a question?                     │
 │  I'd like to hear from you.                                      │
 │                                                                  │
-│  luckysolanki902@gmail.com →                                     │
+│  ankurgupta.official17@gmail.com →                                     │
 │                                                                  │
 │  ─────────────────────────────────                               │
 │                                                                  │
@@ -1300,11 +1300,11 @@ Body:
   Margin-top:    var(--space-4)
 
 Email:
-  Text:          "luckysolanki902@gmail.com →"
+  Text:          "ankurgupta.official17@gmail.com →"
   Font:          Inter 500, --text-md
   Color:         --text-primary
   Margin-top:    var(--space-6)
-  Link:          mailto:luckysolanki902@gmail.com
+  Link:          mailto:ankurgupta.official17@gmail.com
   Hover:         Underline draw
 
 Divider:         1px solid var(--border-subtle), margin: var(--space-8) 0
@@ -1346,7 +1346,7 @@ The quietest part of the page. Doesn't repeat the nav. Doesn't add information. 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                                                                  │
-│  © 2026 Lucky Solanki                    Built with Next.js      │
+│  © 2026 Ankur Gupta                    Built with Next.js      │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
 ```
@@ -1358,7 +1358,7 @@ Background:     var(--bg-subtle)
 Padding:        var(--space-6) 0
 Border-top:     1px solid var(--border-subtle)
 
-Left:           "© 2026 Lucky Solanki"
+Left:           "© 2026 Ankur Gupta"
 Right:          "Built with Next.js"
 Font:           Inter 400, --text-sm
 Color:          --text-tertiary
@@ -1443,19 +1443,19 @@ Cumulative Layout Shift: < 0.05
 ### SEO
 
 ```html
-<title>Lucky Solanki — Engineer & Founder</title>
+<title>Ankur Gupta — Engineer & Founder</title>
 <meta name="description" content="I build products people actually use. Engineer at Blitzit, co-founder of Spyll. Full-stack development, from first line to first user." />
 
 <!-- Open Graph -->
-<meta property="og:title" content="Lucky Solanki — Engineer & Founder" />
+<meta property="og:title" content="Ankur Gupta — Engineer & Founder" />
 <meta property="og:description" content="I build products people actually use." />
 <meta property="og:image" content="/og-image2.png" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://luckysolanki.dev" />
+<meta property="og:url" content="https://ankur17nith.github.io" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Lucky Solanki — Engineer & Founder" />
+<meta name="twitter:title" content="Ankur Gupta — Engineer & Founder" />
 <meta name="twitter:description" content="I build products people actually use." />
 <meta name="twitter:image" content="/og-image2.png" />
 
@@ -1467,7 +1467,7 @@ Person schema: name, jobTitle, url, sameAs (GitHub, LinkedIn)
 
 Custom 1200×630px image. Matches the site's aesthetic:
 - Background: `--bg-primary` (warm off-white)
-- "Lucky Solanki" — Quicksand 700, large
+- "Ankur Gupta" — Quicksand 700, large
 - "Engineer & Founder" — Inter 400, below
 - Clean, minimal. No photo (looks awkward at small sizes).
 
@@ -1523,10 +1523,10 @@ Linting:         ESLint + Prettier
 ### Project Structure
 
 ```
-lucky-2026-portfolio/
+ankur-gupta-portfolio/
 ├── public/
 │   ├── images/
-│   │   ├── lucky.jpg
+│   │   ├── avatar.svg
 │   │   ├── og-image2.png
 │   │   └── projects/
 │   │       ├── spyll.png
@@ -1659,16 +1659,16 @@ export const experience = [
 ]
 
 export const socials = {
-  github: 'https://github.com/Luckysolanki902',
-  linkedin: 'https://linkedin.com/in/luckysolanki902',
-  email: 'luckysolanki902@gmail.com',
+  github: 'https://github.com/Ankur17nith',
+  linkedin: 'https://linkedin.com/in/Ankur17nith',
+  email: 'ankurgupta.official17@gmail.com',
 }
 
 export const siteConfig = {
-  name: 'Lucky Solanki',
-  title: 'Lucky Solanki — Engineer & Founder',
+  name: 'Ankur Gupta',
+  title: 'Ankur Gupta — Engineer & Founder',
   description: 'I build products people actually use.',
-  url: 'https://luckysolanki.dev',
+  url: 'https://ankur17nith.github.io',
 }
 ```
 

@@ -26,7 +26,7 @@ test('direct arcade entry and paused conversations preserve board geometry',asyn
  await page.getByRole('button',{name:'Play arcade',exact:false}).click();
  await expect(page.getByRole('dialog',{name:'Ship it task arcade'})).toBeVisible();
  const tip=page.getByRole('complementary',{name:'Play tip'});await expect(tip).toBeVisible();
- const box=await page.locator('#task-arena').boundingBox();const actor=page.getByLabel('Lucky coding with a laptop');const style=await actor.getAttribute('style');await page.waitForTimeout(500);expect(await actor.getAttribute('style')).toBe(style);
+ const box=await page.locator('#task-arena').boundingBox();const actor=page.getByLabel('Character coding with a laptop');const style=await actor.getAttribute('style');await page.waitForTimeout(500);expect(await actor.getAttribute('style')).toBe(style);
  await tip.getByRole('button',{name:'Got it'}).click();await expect(tip).toHaveCount(0);expect(await page.locator('#task-arena').boundingBox()).toEqual(box);
  await page.keyboard.down('ArrowRight');await page.waitForTimeout(2400);await page.keyboard.up('ArrowRight');await expect(tip).toHaveCount(0);
  await page.screenshot({path:'output/design/arcade/conversation-fixed.png'});

@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { getExperienceYears } from "@/lib/experience";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import { SECTION_IDS } from "@/lib/constants";
-import { useThemeStore } from "@/store/useThemeStore";
 import styles from "./Hero.module.css";
 
 const display = Barlow_Condensed({ subsets: ["latin"], weight: "700", display: "swap" });
@@ -19,7 +18,6 @@ export function Hero() {
     const timer = window.setInterval(update, 60_000);
     return () => window.clearInterval(timer);
   }, []);
-  const theme = useThemeStore((state) => state.theme);
   const goTo = (id: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     document.getElementById(id)?.scrollIntoView({

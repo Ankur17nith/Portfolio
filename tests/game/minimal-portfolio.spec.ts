@@ -2,25 +2,20 @@ import { test, expect } from '@playwright/test';
 
 test('portfolio navigation scrolls, work expands inline, and room stays compact', async ({page}) => {
   await page.goto('/');
-  await expect(page.getByRole('heading',{name:'Lucky Solanki.'})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Ankur Gupta.'})).toBeVisible();
   expect((await page.locator('#playable-room').boundingBox())!.height).toBeLessThan(330);
-  await page.getByRole('navigation',{name:'Portfolio navigation'}).getByRole('link',{name:'Work',exact:true}).click();
-  await expect(page).toHaveURL(/#work$/);
-  await expect(page.getByRole('heading',{name:'Work experience.'})).toBeInViewport();
+  await page.getByRole('navigation',{name:'Portfolio navigation'}).getByRole('link',{name:'Projects',exact:true}).click();
+  await expect(page).toHaveURL(/#projects$/);
+  await expect(page.getByRole('heading',{name:'Small ideas. Real products.'})).toBeInViewport();
   await expect(page.getByRole('dialog')).toHaveCount(0);
-  await page.locator('#work summary').first().click();
-  await expect(page.getByText('Building the Blitzit 3.0 backend:',{exact:false})).toBeVisible();
-  await page.locator('#work summary').first().click();
-  await expect(page.locator('#work details').first()).not.toHaveAttribute('open','');
   await page.reload();
-  await expect(page.getByRole('heading',{name:'Work experience.'})).toBeInViewport();
   await expect(page.locator('#playable-room')).toHaveAttribute('data-phase','room');
 });
 
 test('stack selection, room marker scrolling, and sound settings work',async({page})=>{
   await page.goto('/');
-  await page.getByRole('button',{name:'PostgreSQL',exact:true}).click();
-  await expect(page.locator('#skill-description')).toContainText('AutoRemov');
+  await page.getByRole('button',{name:'MongoDB and Mongoose',exact:true}).click();
+  await expect(page.locator('#skill-description')).toContainText('TT_TRACKER');
   for (const img of await page.locator('[aria-label="Technology skills"] img').all()) {
     expect(await img.evaluate((el:HTMLImageElement)=>el.complete && el.naturalWidth>0)).toBe(true);
   }
@@ -40,9 +35,9 @@ test('mobile sections remain in flow and keyboard play is scoped to room',async(
   await expect(page.locator('#playable-room')).toHaveAttribute('data-ready','true');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(320);
   await page.getByRole('navigation',{name:'Portfolio navigation'}).getByRole('link',{name:'Contact',exact:true}).click();
-  await expect(page.getByRole('heading',{name:'Have something in mind?'})).toBeInViewport();
+  await expect(page.getByRole('heading',{name:'Let\'s build something useful.'})).toBeInViewport();
   await page.goto('/');
-  const actor=page.getByLabel('Lucky’s playable character');
+  const actor=page.getByLabel('Playable character');
   const before=await actor.getAttribute('style');
   await page.keyboard.down('ArrowRight');await page.waitForTimeout(150);await page.keyboard.up('ArrowRight');
   expect(await actor.getAttribute('style')).toBe(before);

@@ -59,7 +59,7 @@ test('room uses W and Up for jump, Space no longer jumps or scrolls; manager gui
  await page.clock.install();await page.goto('/');await expect(page.locator('#playable-room')).toHaveAttribute('data-ready','true');
  const room=page.getByLabel('Interactive room',{exact:true});await room.focus();
  await page.keyboard.down('a');await page.clock.runFor(1100);await page.keyboard.up('a');await page.clock.runFor(400);
- const actor=page.getByLabel('Lucky’s playable character');
+ const actor=page.getByLabel('Playable character');
  const y=await actor.evaluate(el=>new DOMMatrix(getComputedStyle(el).transform).m42);
  const scroll=await page.evaluate(()=>scrollY);
  await page.keyboard.press('Space');await page.clock.runFor(120);
