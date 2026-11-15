@@ -146,7 +146,7 @@ export const projects: Project[] = [
     category: "founder",
     url: "/work/prisms",
     github: "https://github.com/Ankur17nith",
-    image: "/images/projects/prisms.svg",
+    image: "/images/projects/prisms/landing.png",
     stack: ["Node.js", "Express.js", "MongoDB", "Institutional Auth", "Document Workflows"],
     story: {
       problem: "Research administration involves multiple stages, academic documents, submissions, reviews, and institutional processes. Managing these workflows without a centralized system can make tracking and coordination difficult.",

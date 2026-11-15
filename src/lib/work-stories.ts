@@ -223,7 +223,7 @@ export const workStories: WorkStory[] = [
       "PRISMS is an academic administration project intended to support the lifecycle of PhD scholars, beginning with a thesis submission and upload module and providing a foundation for additional research administration workflows.",
     ownership:
       "Developing the initial thesis submission module, institutional authentication workflow, and document management foundation.",
-    image: "/images/projects/prisms.svg",
+    image: "/images/projects/prisms/landing.png",
     caption:
       "PRISMS · Digital workflow for PhD research administration.",
     proof: [

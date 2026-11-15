@@ -53,7 +53,7 @@ const prisms = (
 ): WorkMedia => ({
   id,
   section,
-  src: `/images/projects/prisms/${id}.svg`,
+  src: `/images/projects/prisms/${id}.png`,
   title,
   caption,
   width,
@@ -218,42 +218,68 @@ export const workMedia: Record<string, WorkMedia[]> = {
   ],
   prisms: [
     prisms(
+      "landing",
       "cover",
-      "cover",
-      "PRISMS Scholars Platform",
-      "PhD Research & Institutional Scholars Management System.",
-      1600,
+      "PRISMS Portal",
+      "Institutional landing page of the PhD Research & Institutional Scholars Management System at NIT Hamirpur.",
+      1440,
       900
     ),
     prisms(
-      "portal-overview",
+      "student-dashboard",
       "starting-point",
-      "Scholars Administration Portal",
-      "Centralized administrative workflow for PhD scholars and research committees."
+      "Scholar Dashboard",
+      "Student portal showing the active submission reference, status, supervisor, and PhD milestones.",
+      1440,
+      900
     ),
     prisms(
-      "lifecycle-stages",
+      "workflow",
       "institutional-problem",
-      "Institutional Workflow Lifecycle",
-      "Structured representation of the PhD research stages from coursework to degree conferral."
+      "Doctoral Thesis Approval Workflow",
+      "The five statutory review stages from scholar submission to final Senate approval, shown in the portal.",
+      1440,
+      900
     ),
     prisms(
-      "thesis-upload",
+      "student-submit",
       "thesis-submission",
-      "Thesis Submission Module (Current Scope)",
-      "Digital document submission workflow with dissertation metadata and supervisor attribution."
+      "Thesis Submission Wizard",
+      "Three-step submission flow, starting with dissertation title, abstract and keywords.",
+      1440,
+      900
     ),
     prisms(
-      "college-auth",
-      "auth-workflow",
-      "Institutional Authentication (Intended)",
-      "Intended scholar verification using institutional college Gmail accounts."
+      "student-details",
+      "thesis-submission",
+      "Submission Details & Reader",
+      "Submitted thesis with its approval stage and an in-portal PDF reader.",
+      1440,
+      900
     ),
     prisms(
-      "planned-modules",
+      "faculty-dashboard",
       "future-modules",
-      "Planned Research Lifecycle Modules",
-      "Roadmap modules covering comprehensive exams, progress seminars, and thesis defense."
+      "Supervisor Dashboard",
+      "Pending reviews, supervised scholars and the review queue for the supervisor role.",
+      1440,
+      900
+    ),
+    prisms(
+      "faculty-queue",
+      "future-modules",
+      "Approval Queue",
+      "Submissions awaiting a decision, with reference, scholar, stage and a link into the review workspace.",
+      1440,
+      900
+    ),
+    prisms(
+      "faculty-review",
+      "future-modules",
+      "Review Workspace",
+      "View-only thesis reader beside the decision panel: forward to the next authority, return for revision, or reject.",
+      1440,
+      900
     ),
   ],
 };
