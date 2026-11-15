@@ -103,7 +103,7 @@ export const workStories: WorkStory[] = [
       "FATGS is a timetable generation system designed to organize academic scheduling requirements involving faculty, classes, subjects, rooms, and weekly time slots.",
     ownership:
       "I designed and implemented the scheduling logic, academic master data model, constraint validation, and timetable generation workflow.",
-    image: "/images/projects/fatgs.svg",
+    image: "/images/projects/fatgs/studio.png",
     caption:
       "FATGS · Faculty Allocation & Timetable Generation System.",
     proof: [

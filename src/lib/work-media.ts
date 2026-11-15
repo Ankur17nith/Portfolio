@@ -19,7 +19,7 @@ const fatgs = (
 ): WorkMedia => ({
   id,
   section,
-  src: `/images/projects/fatgs/${id}.svg`,
+  src: `/images/projects/fatgs/${id}.png`,
   title,
   caption,
   width,
@@ -136,44 +136,44 @@ export const workMedia: Record<string, WorkMedia[]> = {
   ],
   fatgs: [
     fatgs(
+      "studio",
       "cover",
-      "cover",
-      "The FATGS Master Workspace",
-      "Faculty Allocation and Timetable Generation System overview and weekly slot configuration.",
-      1600,
+      "FATGS Timetable Studio",
+      "Academic Timetable Builder with year, semester and section selection and the shared theory room configuration.",
+      1440,
       900
     ),
     fatgs(
-      "data-entry",
+      "handoff",
       "starting-point",
-      "Academic Master Data",
-      "Structured inputs for faculty profiles, course catalogs, student cohorts, and classrooms."
+      "Semester Handoff & Completeness Status",
+      "Per-section generation status across nine sections, with a completeness check before JSON export for TT_TRACKER.",
+      1272,
+      378
     ),
     fatgs(
-      "constraints",
+      "rooms",
       "scheduling-problem",
-      "Scheduling Constraints Validation",
-      "Constraint validation ensuring no faculty double-booking and checking classroom capacity."
-    ),
-    fatgs(
-      "schema",
-      "data-modeling",
-      "Slot & Entity Relational Models",
-      "Data structures defining weekly periods, course credit hours, and department mappings."
+      "Shared Theory Rooms",
+      "Four classrooms shared by the CS and CD undergraduate sections, each selectable without duplicates.",
+      1272,
+      372
     ),
     fatgs(
       "allocation",
       "faculty-allocation",
       "Faculty Allocation Matrix",
-      "Matching instructors to required subject hours while balancing teaching loads."
+      "Compulsory theory subjects and practical laboratories with course codes, credits and assigned faculty.",
+      1272,
+      557
     ),
     fatgs(
-      "timetable-output",
+      "timetable",
       "timetable-workflow",
-      "Generated Timetable Matrix",
-      "Exportable weekly schedules presented class-wise and faculty-wise.",
-      1600,
-      900
+      "Generated Timetable",
+      "Conflict-free weekly grid with the lunch block, and G1 and G2 lab groups scheduled in separate laboratories.",
+      1272,
+      485
     ),
   ],
   tt_tracker: [

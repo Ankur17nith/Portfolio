@@ -91,7 +91,7 @@ export const projects: Project[] = [
     category: "founder",
     url: "https://github.com/Ankur17nith/FATGS",
     github: "https://github.com/Ankur17nith/FATGS",
-    image: "/images/projects/fatgs.svg",
+    image: "/images/projects/fatgs/studio.png",
     stack: ["Scheduling Logic", "Faculty Allocation", "Data Modeling", "Timetable Generation", "C++", "Python"],
     story: {
       problem: "Generating academic timetables requires coordinating faculty assignments, class groups, room suitability, subjects, and scheduling constraints.",
