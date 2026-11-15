@@ -25,6 +25,74 @@ export interface WorkStory {
 
 export const workStories: WorkStory[] = [
   {
+    slug: "skillapt",
+    name: "skillapt",
+    role: "CLI, Registry & Web Portal",
+    period: "Personal Project · 2026",
+    tagline: "A secure package manager for AI agent skills: install, lock, verify, pack and publish.",
+    heading: "A Secure Package Manager for AI Agent Skills",
+    introduction:
+      "skillapt is a package manager for AI agent skills (SKILL.md plus helper files). It lets you install skills from a registry or straight from GitHub, lock them, verify their integrity, and sync them into Claude, Cursor, Codex and Antigravity.",
+    ownership:
+      "I built all three parts: the TypeScript CLI, the registry API on Cloudflare Workers, and the React web portal, including the archive validation, lockfile and token-security design.",
+    image: "/images/projects/skillapt/home-light.png",
+    caption: "skillapt · Home page of the web portal with the install command and terminal preview.",
+    proof: [
+      { value: "3 repos", label: "CLI, registry, web portal" },
+      { value: "14 commands", label: "init to publish and doctor" },
+      { value: "SHA-256", label: "Verified before extraction" },
+    ],
+    status:
+      "All three repositories are built and tested. No public hosted registry is running yet: the portal runs in demo mode on bundled sample skills, and the registry is self-hostable on Cloudflare's free tier.",
+    features: [
+      {
+        id: "package-manager-cli",
+        title: "A package manager for agent skills.",
+        outcome:
+          "Makes skill installs reproducible with a manifest and a lockfile instead of copy-pasting from repositories.",
+        how:
+          "The CLI scaffolds skills with init, resolves registry names or GitHub sources, writes skills.json and skills.lock.json, supports install --frozen for CI, and syncs installed skills into the skill directories of Claude, Cursor, Codex and Antigravity.",
+        tech: "Node.js 22 · TypeScript · commander",
+      },
+      {
+        id: "registry-api",
+        title: "A registry that runs on the free tier.",
+        outcome:
+          "Stores and serves skill packages as immutable releases without any paid infrastructure.",
+        how:
+          "The registry is a Hono application on Cloudflare Workers with D1 for metadata, R2 for create-only .tgz archives, a Durable Object rate limiter and a daily cleanup cron. Republishing an existing version returns 409.",
+        tech: "Cloudflare Workers · Hono · D1 · R2",
+      },
+      {
+        id: "web-portal",
+        title: "A portal for discovering skills.",
+        outcome:
+          "Lets people search, filter and inspect skills before installing them.",
+        how:
+          "The React portal offers fuzzy search with a command palette, category and compatibility filters, skill pages with install commands and version history, and docs rendered from markdown. With no registry configured it runs entirely on bundled sample data.",
+        tech: "React 19 · React Router 7 · Vite · Tailwind CSS v4",
+      },
+      {
+        id: "trust-and-security",
+        title: "Security at every layer.",
+        outcome:
+          "Treats every skill as untrusted input and makes tampering detectable.",
+        how:
+          "Archives are checked against strict limits, symlinks, devices and path traversal are rejected, lifecycle scripts never run, integrity digests are re-checked from the lockfile, and the portal ships a strict Content-Security-Policy with no third-party requests.",
+        tech: "SHA-256 · zod · Archive Validation · CSP",
+      },
+      {
+        id: "publishing-flow",
+        title: "Publishing and token management.",
+        outcome:
+          "Gives publishers a safe way to ship, yank and restore versions.",
+        how:
+          "Packages are created with pack and shipped with publish. GitHub OAuth protects the dashboard, where publishers view their skills, yank or restore versions, and create CLI tokens that are shown once and stored only as hashes.",
+        tech: "GitHub OAuth · API Tokens · Dashboard",
+      },
+    ],
+  },
+  {
     slug: "fatgs",
     name: "FATGS",
     role: "Scheduling Logic & Data Modeling",

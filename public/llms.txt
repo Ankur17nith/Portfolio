@@ -5,6 +5,7 @@
 Ankur Gupta is a Computer Science student at the National Institute of Technology Hamirpur focused on backend development, full-stack applications, and building reliable software through practical projects.
 
 ## Projects
+- [skillapt](https://ankurgupta.dev/work/skillapt): A secure package manager for AI agent skills. A TypeScript CLI, a registry API on Cloudflare Workers (Hono, D1, R2) and a React web portal to install, lock, verify, pack and publish skills for Claude, Cursor, Codex and Antigravity. Source: https://github.com/Ankur17nith/skillapt
 - [FATGS](https://ankurgupta.dev/work/fatgs): Faculty Allocation and Timetable Generation System designed to organize academic scheduling requirements involving faculty, classes, subjects, rooms, and weekly time slots.
 - [TT_TRACKER](https://ankurgupta.dev/work/tt_tracker): Academic Timetable Tracking and Management System designed to provide class-wise and faculty-wise timetable views and support schedule changes, cancellations, and room availability checks.
 - [PRISMS](https://ankurgupta.dev/work/prisms): PhD Research & Institutional Scholars Management System supporting the lifecycle of PhD scholars, beginning with a thesis submission module.

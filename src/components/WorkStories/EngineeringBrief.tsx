@@ -15,6 +15,56 @@ interface BriefData {
 }
 
 const briefContent: Record<string, BriefData> = {
+  skillapt: {
+    title: "A secure package manager for AI agent skills.",
+    intro:
+      "skillapt installs, locks, verifies, packs and publishes AI agent skills for Claude, Cursor, Codex and Antigravity, from a registry or straight from GitHub.",
+    decisions: [
+      [
+        "Reproducible installs",
+        "A skills.json manifest and skills.lock.json lockfile, with install --frozen for CI and GitHub sources pinned to a commit SHA.",
+        "#package-manager-cli",
+      ],
+      [
+        "Immutable releases on a free tier",
+        "Hono on Cloudflare Workers with D1 and R2, where republishing a version returns 409 and yanked versions stay downloadable for lockfiles.",
+        "#registry-api",
+      ],
+      [
+        "Treat every skill as untrusted",
+        "SHA-256 verification before extraction, strict archive limits, no symlinks and no lifecycle scripts, ever.",
+        "#trust-and-security",
+      ],
+    ],
+    flowTitle: "Skill lifecycle · from authoring to the agent",
+    flowSteps: [
+      ["Author & pack", "skillapt init, skillapt pack"],
+      ["Publish", "Registry stores an immutable release"],
+      ["Install & lock", "SHA-256 checked, lockfile written"],
+      ["Sync", "Claude, Cursor, Codex, Antigravity"],
+    ],
+    flowNote: "Registry and GitHub sources share the same install, lock and verify path.",
+    evidenceSummary: "Security checks & verification",
+    evidenceText:
+      "Archives are limited to 5 MB compressed, 25 MB uncompressed and 500 files. Paths are normalized and checked, file types are allow-listed, and API tokens are stored only as hashes.",
+    evidenceDetails: [
+      [
+        "Integrity verified before extraction",
+        "SHA-256 digests come from registry metadata and are re-checked from the lockfile on every install.",
+      ],
+      [
+        "Strict archive handling",
+        "Symlinks, hardlinks, devices, absolute paths and .. segments are rejected, and gzip decompression is capped.",
+      ],
+      [
+        "Safe authentication",
+        "GitHub OAuth with HTTP-only cookies and CSRF checks for the dashboard, and hashed apt_live_ tokens that expire after 90 days for the CLI.",
+      ],
+    ],
+    statusTitle: "Current status",
+    statusText:
+      "All three repositories are built and tested. No public registry is hosted yet, so the portal runs in demo mode and the registry is self-hostable on Cloudflare's free tier.",
+  },
   fatgs: {
     title: "Structured academic scheduling & allocation.",
     intro:

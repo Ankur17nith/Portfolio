@@ -9,6 +9,10 @@ import styles from "./ProjectShowcase.module.css";
 
 const selected = projects;
 const captions: Record<string, { title: string; role: string }> = {
+  skillapt: {
+    title: "A secure package manager for AI agent skills.",
+    role: "CLI · Registry API · Web Portal · Package Security",
+  },
   fatgs: {
     title: "Academic timetable generation through structured scheduling.",
     role: "Scheduling Logic · Faculty Allocation · Data Modeling",
@@ -125,7 +129,7 @@ export function ProjectShowcase() {
               )}
               <div className={styles.description}>
                 <span className={styles.context}>
-                  ACADEMIC / PRACTICAL · {p.year}
+                  {p.slug === "skillapt" ? "DEVELOPER TOOLING" : "ACADEMIC / PRACTICAL"} · {p.year}
                 </span>
                 <h3 id={`title-${p.slug}`}>{captions[p.slug]?.title ?? p.name}</h3>
                 <p>{p.tagline}</p>

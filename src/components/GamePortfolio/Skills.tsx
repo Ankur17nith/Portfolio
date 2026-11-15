@@ -3,12 +3,12 @@ import { Braces, Workflow, Sparkles, Database, PanelsTopLeft, Terminal } from "l
 import styles from "./Skills.module.css";
 
 const skills = [
-  { name: "Backend development", tools: "Node.js · Express.js · REST APIs", level: "Core focus", icon: Braces, proof: "Implemented server logic, routing, and backend request processing across academic projects.", href: "/work/fatgs", source: "FATGS" },
+  { name: "Backend development", tools: "Node.js · Express.js · Cloudflare Workers · REST APIs", level: "Core focus", icon: Braces, proof: "Built a registry API on Cloudflare Workers with immutable releases, hashed tokens and rate limiting, plus server logic across academic projects.", href: "/work/skillapt", source: "skillapt" },
   { name: "Databases & modeling", tools: "MongoDB · Mongoose", level: "Core focus", icon: Database, proof: "Modeled schemas for academic timetables, faculty slots, and scholar management workflows.", href: "/work/tt_tracker", source: "TT_TRACKER" },
   { name: "Systems programming", tools: "C and C++", level: "Foundation", icon: Workflow, proof: "Programming fundamentals, data structures, and algorithmic problem-solving at NIT Hamirpur.", href: "/work", source: "NIT Hamirpur" },
-  { name: "Full-stack web", tools: "React · JavaScript · TypeScript", level: "Core focus", icon: PanelsTopLeft, proof: "Built dynamic client views for timetable management, room availability, and thesis uploads.", href: "/work/tt_tracker", source: "TT_TRACKER" },
-  { name: "Styling & UI", tools: "HTML · CSS · Tailwind CSS", level: "Core focus", icon: Sparkles, proof: "Developed responsive interfaces and modern layouts for academic administration platforms.", href: "/work/prisms", source: "PRISMS" },
-  { name: "Developer tools", tools: "Git · GitHub · Postman · Figma", level: "Core focus", icon: Terminal, proof: "Version control workflows, API testing and verification, and interface prototyping.", href: "https://github.com/Ankur17nith", source: "GitHub" },
+  { name: "Full-stack web", tools: "React · JavaScript · TypeScript", level: "Core focus", icon: PanelsTopLeft, proof: "Built the skillapt web portal in React and TypeScript, and dynamic client views for timetable management and thesis uploads.", href: "/work/skillapt", source: "skillapt" },
+  { name: "Styling & UI", tools: "HTML · CSS · Tailwind CSS · Bootstrap", level: "Core focus", icon: Sparkles, proof: "Developed responsive, themeable interfaces, including the Tailwind-based skillapt portal with light and dark modes.", href: "/work/prisms", source: "PRISMS" },
+  { name: "Developer tools", tools: "Git · GitHub · Docker · Linux · Postman · Figma", level: "Core focus", icon: Terminal, proof: "Version control workflows, API testing and verification, and interface prototyping.", href: "https://github.com/Ankur17nith", source: "GitHub" },
 ];
 
 export function Skills() {

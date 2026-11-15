@@ -8,7 +8,7 @@ import { ArrowUpRight, Github, Mail, FileText } from "lucide-react";
 import { GamePortfolio } from "./GamePortfolio";
 import { SmoothScroll } from "./SmoothScroll";
 import { TechStack } from "./TechStack";
-import { experience, socials } from "@/lib/data";
+import { socials } from "@/lib/data";
 import { notes } from "@/components/Journal/JournalFrame";
 import styles from "./Portfolio.module.css";
 
@@ -110,18 +110,6 @@ export function Portfolio({}: { testimonials?: PublicTestimonial[] } = {}) {
           </div>
         </section>
 
-        {experience.length > 0 && (
-          <section id="work" className={styles.section}>
-            <div className={styles.sectionHeading}>
-              <div>
-                <span className={styles.eyebrow}>01 / ENGINEERING IN PRACTICE</span>
-                <h2>Work experience.</h2>
-              </div>
-              <p></p>
-            </div>
-          </section>
-        )}
-
         <section id="skills" className={styles.section}>
           <div className={styles.sectionHeading}>
             <div>
@@ -177,10 +165,11 @@ export function Portfolio({}: { testimonials?: PublicTestimonial[] } = {}) {
             </p>
             <p>
               I enjoy learning through practical implementation and building
-              applications that solve real problems. My projects include FATGS,
-              TT_TRACKER, and PRISMS, which reflect my interest in academic
-              scheduling, timetable management, and research administration
-              software.
+              applications that solve real problems. My projects include skillapt,
+              a secure package manager for AI agent skills, along with FATGS,
+              TT_TRACKER, and PRISMS, which reflect my interest in developer
+              tooling, academic scheduling, timetable management, and research
+              administration software.
             </p>
             <p>
               I&apos;m continuing to strengthen my programming fundamentals,

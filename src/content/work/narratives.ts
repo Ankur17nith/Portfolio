@@ -12,6 +12,64 @@ export interface StoryNarrative {
 }
 
 export const narratives: Record<string, StoryNarrative> = {
+  skillapt: {
+    opening: [
+      "AI agent skills, a SKILL.md file plus helper files, are effectively prompts and code that an agent trusts. Today they are usually copy-pasted from random repositories, which gives you no versioning, no integrity check and no review step.",
+      "skillapt is a package manager built for that gap. It installs skills from a registry or from any public GitHub repository, records them in a manifest and a lockfile, verifies them before extraction, and syncs them into the skill directories of Claude, Cursor, Codex and Antigravity.",
+      "The project is three repositories that work together: the skillapt CLI, the skillapt-registry API and the skillapt-web portal. I wanted to see one idea through the whole stack, from a terminal command to a database row to a web page.",
+    ],
+    notes: {
+      "package-manager-cli": [
+        "The CLI covers the full lifecycle with fourteen commands: init, install, search, info, outdated, update, list, remove, login, logout, pack, publish, yank and doctor.",
+        "Installs are reproducible. skills.json declares what a project wants, skills.lock.json records exactly what was resolved, and install --frozen refuses to drift, which is what a CI pipeline needs.",
+        "GitHub sources are pinned to a resolved commit SHA in the lockfile, so a branch moving later cannot silently change what gets installed. Skills can then be synced into an agent's directory with the --target flag.",
+      ],
+      "registry-api": [
+        "The registry is built to cost nothing to host. A Hono app runs on Cloudflare Workers, D1 holds metadata, users, tokens and the audit log, and R2 holds the immutable .tgz archives.",
+        "Releases are immutable by design. R2 writes are create-only and metadata is written in one atomic batch, so republishing a version returns 409 instead of replacing it. Owners can yank a bad version, which hides it from version ranges but keeps it downloadable for existing lockfiles.",
+        "A Durable Object provides sliding-window rate limits, and a daily cron trigger cleans up. A read-only maintenance mode and a runbook cover operations.",
+      ],
+      "web-portal": [
+        "The portal is a fast static site. It has fuzzy search with a Ctrl+K command palette, category and compatibility filters, sorting, pagination and URL-synced filters.",
+        "Each skill page renders its README as GitHub-flavored markdown without raw HTML, shows the install command, the version history with yank status and a security summary, and includes an abuse-report form.",
+        "Documentation lives as markdown files in the repository and is rendered at /docs. Light and dark themes load without a flash of the wrong theme, and automated axe-core checks run against every route in both themes.",
+      ],
+      "trust-and-security": [
+        "The threat model starts from the assumption that a skill is hostile. SHA-256 digests are verified before extraction, archives have strict size and file-count limits, and symlinks, hardlinks, devices, absolute paths and .. segments are rejected.",
+        "Lifecycle scripts never run, gzip decompression is capped to defend against decompression bombs, and declared permissions such as network, shell and filesystem are shown and need confirmation when elevated.",
+        "Registry responses are validated with zod, redirects are HTTPS-only and drop the token when the origin changes, and the web portal uses a strict Content-Security-Policy where script-src is self and fonts are self-hosted.",
+      ],
+      "publishing-flow": [
+        "A publisher scaffolds a skill with init, creates an archive with pack and ships it with publish. Unscoped names are first-come, while @scope/name packages are tied to the owning GitHub account.",
+        "The dashboard signs in with GitHub OAuth using HTTP-only, Secure, SameSite cookies and CSRF checks. Publishers can yank and restore versions and create or revoke CLI tokens.",
+        "Tokens look like apt_live_..., expire after 90 days by default, are shown once, and only their SHA-256 hash is stored.",
+      ],
+    },
+    chapters: [
+      {
+        heading: "How the three repositories fit together",
+        paragraphs: [
+          "The CLI talks to the registry over HTTPS under /v1 with a bearer token. The web portal reads the same API through a CORS allowlist, and the build writes the registry URL into the portal's Content-Security-Policy so the browser can call only that one origin.",
+        ],
+        bullets: [
+          "skillapt: the CLI, distributed through npm and requiring Node.js 22.12 or newer.",
+          "skillapt-registry: the registry API on Cloudflare Workers, D1 and R2.",
+          "skillapt-web: the React portal and documentation, deployed as static assets.",
+        ],
+      },
+      {
+        heading: "Registry versus GitHub sources",
+        paragraphs: [
+          "A registry install uses name@range, supports SemVer ranges, yanking and dependencies, and checks the SHA-256 from registry metadata. A GitHub install uses owner/repo/subpath@ref, needs no registry at all, and pins to a commit SHA.",
+          "Content rule violations are errors for registry packages and warnings for GitHub sources, where a strict flag turns them into errors.",
+        ],
+      },
+    ],
+    closing: [
+      "Building skillapt taught me how much of a package manager is really about trust: integrity checks, immutable releases, safe archive handling and careful token storage matter more than the install command itself.",
+      "It also gave me practice shipping one product across a CLI, an edge API and a web frontend, with tests and CI in each repository.",
+    ],
+  },
   fatgs: {
     opening: [
       "Generating academic timetables requires coordinating faculty assignments, class groups, room suitability, subjects, and scheduling constraints. Without structured data models and automated scheduling rules, conflicts such as instructor overlap or double-booked classrooms easily occur.",

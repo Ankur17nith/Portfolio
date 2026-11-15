@@ -15,7 +15,7 @@ test('portfolio navigation scrolls, work expands inline, and room stays compact'
 test('stack selection, room marker scrolling, and sound settings work',async({page})=>{
   await page.goto('/');
   await page.getByRole('button',{name:'MongoDB and Mongoose',exact:true}).click();
-  await expect(page.locator('#skill-description')).toContainText('TT_TRACKER');
+  await expect(page.locator('#skill-description')).toContainText('Document data modeling');
   for (const img of await page.locator('[aria-label="Technology skills"] img').all()) {
     expect(await img.evaluate((el:HTMLImageElement)=>el.complete && el.naturalWidth>0)).toBe(true);
   }

@@ -60,7 +60,80 @@ const prisms = (
   height,
 });
 
+const skillapt = (
+  id: string,
+  section: string,
+  title: string,
+  caption: string,
+  width = 1440,
+  height = 900
+): WorkMedia => ({
+  id,
+  section,
+  src: `/images/projects/skillapt/${id}.png`,
+  title,
+  caption,
+  width,
+  height,
+});
+
 export const workMedia: Record<string, WorkMedia[]> = {
+  skillapt: [
+    skillapt(
+      "home-light",
+      "cover",
+      "skillapt Home",
+      "Landing page of the web portal with search, the install command and a terminal preview."
+    ),
+    skillapt(
+      "home-dark",
+      "starting-point",
+      "Home in the Dark Theme",
+      "The same page in the dark theme, which loads without a flash of the wrong theme."
+    ),
+    skillapt(
+      "docs",
+      "package-manager-cli",
+      "Documentation",
+      "Getting-started guide rendered from the markdown files in the repository."
+    ),
+    skillapt(
+      "browse",
+      "web-portal",
+      "Browse Skills",
+      "Search, category and compatibility filters, sorting and pagination for the skill catalog."
+    ),
+    skillapt(
+      "browse-dark",
+      "web-portal",
+      "Browse Skills, Dark Theme",
+      "The catalog in the dark theme."
+    ),
+    skillapt(
+      "skill-detail",
+      "web-portal",
+      "Skill Detail Page",
+      "Rendered README, install command, version history and security summary for a skill."
+    ),
+    skillapt(
+      "security",
+      "trust-and-security",
+      "Security Model",
+      "Repository provenance, automated scanning, visible permissions, and tips to follow before installing a skill."
+    ),
+    skillapt(
+      "publish",
+      "publishing-flow",
+      "Publish a Skill",
+      "Publishing guide covering the package layout, the manifest, and the 5 MB and 25 MB safety limits."
+    ),
+    skillapt(
+      "dashboard",
+      "publishing-flow",
+      "Publisher Dashboard",
+      "GitHub sign-in gate for managing skills, yanking versions and creating CLI tokens."
+    ),
+  ],
   fatgs: [
     fatgs(
       "cover",

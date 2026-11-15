@@ -24,7 +24,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: siteConfig.title,
   description: siteConfig.description,
-  keywords: ["Ankur Gupta", "Backend Developer", "Computer Science", "NIT Hamirpur", "FATGS", "TT_TRACKER", "PRISMS", "Node.js", "Express.js", "MongoDB", "React", "TypeScript", "C++"],
+  keywords: ["Ankur Gupta", "Backend Developer", "Computer Science", "NIT Hamirpur", "skillapt", "FATGS", "TT_TRACKER", "PRISMS", "Node.js", "Express.js", "MongoDB", "React", "TypeScript", "Python", "C++", "Docker", "Cloudflare Workers"],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   icons: {
@@ -97,14 +97,29 @@ const jsonLd = {
     "Databases",
     "C and C++",
     "JavaScript and TypeScript",
+    "Python",
     "React",
+    "Tailwind CSS",
     "Node.js",
     "Express.js",
     "MongoDB and Mongoose",
+    "Cloudflare Workers",
+    "Docker",
+    "Linux",
+    "Package Management",
     "Academic Scheduling",
     "Software Architecture",
   ],
   subjectOf: [
+    {
+      "@type": "SoftwareApplication",
+      name: "skillapt",
+      url: "https://github.com/Ankur17nith/skillapt",
+      description:
+        "A secure package manager for AI agent skills: a TypeScript CLI, a registry API on Cloudflare Workers, and a React web portal to install, lock, verify, pack and publish skills.",
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Cross-platform (Node.js 22+)",
+    },
     {
       "@type": "SoftwareApplication",
       name: "FATGS",

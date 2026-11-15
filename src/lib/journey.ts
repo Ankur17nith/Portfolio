@@ -13,6 +13,12 @@ export const journeyChapters = [
   },
   {
     year: "Project",
+    title: "skillapt — A Secure Package Manager for AI Agent Skills",
+    body: `Agent skills are prompts and code that an AI agent trusts, but they are usually copy-pasted with no versioning or integrity checks. With skillapt I built a TypeScript CLI, a registry API on Cloudflare Workers, and a React web portal that together install, lock, verify and publish skills, with SHA-256 verification and strict archive handling at every step.`,
+    tags: ["skillapt", "TypeScript", "Cloudflare Workers", "Package Security"],
+  },
+  {
+    year: "Project",
     title: "FATGS — Structured Timetable Scheduling",
     body: `Recognizing the coordination complexity in university scheduling, I built FATGS (Faculty Allocation and Timetable Generation System). The project centers on modeling academic scheduling entities—faculty, classes, subjects, rooms, and weekly slots—and applying scheduling constraints to organize allocation workflows predictably.`,
     tags: ["FATGS", "Scheduling Logic", "Faculty Allocation", "Data Modeling"],

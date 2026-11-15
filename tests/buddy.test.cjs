@@ -75,7 +75,7 @@ test('context is conditional and only includes trusted public sources', () => {
   const home = JSON.parse(buildBuddyContext('/', 'Projects', 'fatgs', 'hello'));
   assert.equal(home.currentPage.project, 'FATGS');
   assert.equal(home.currentPage.story, undefined);
-  assert.equal(home.projects.length, 3);
+  assert.equal(home.projects.length, 4);
 });
 
 test('placeholder key returns an honest local fallback without API calls', async () => {
@@ -196,7 +196,7 @@ test('work stories have distinct real media and evidence-aware context', () => {
   }
   const { buildBuddyContext } = load('src/lib/buddy-context.ts');
   const context = JSON.parse(buildBuddyContext('/', 'projects', 'fatgs', 'What is FATGS?'));
-  assert.deepEqual(context.workExperience.map(item => item.name), ['FATGS', 'TT_TRACKER', 'PRISMS']);
+  assert.deepEqual(context.workExperience.map(item => item.name), ['skillapt', 'FATGS', 'TT_TRACKER', 'PRISMS']);
   const { reactionFor } = load('src/lib/pip-reactions.ts');
   assert.match(reactionFor('story:fatgs:constraints').text, /Preventing faculty overlap/);
 });

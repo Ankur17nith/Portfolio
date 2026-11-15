@@ -55,6 +55,33 @@ export const experience: Experience[] = [];
 
 export const projects: Project[] = [
   {
+    slug: "skillapt",
+    name: "skillapt",
+    tagline: "A secure package manager for AI agent skills: install, lock, verify, pack and publish.",
+    description:
+      "skillapt is a package manager for AI agent skills (SKILL.md plus helper files). It ships as three connected repositories: a TypeScript CLI, a registry API on Cloudflare Workers, and a React web portal for browsing, documentation and publishing.",
+    role: "CLI · Registry API · Web Portal · Package Security",
+    category: "founder",
+    url: "/work/skillapt",
+    github: "https://github.com/Ankur17nith/skillapt",
+    image: "/images/projects/skillapt/home-light.png",
+    stack: ["TypeScript", "Node.js", "React", "Cloudflare Workers", "Hono", "D1 + R2", "Tailwind CSS", "Vite"],
+    story: {
+      problem: "Agent skills are prompts and code that an AI agent trusts, yet they are copy-pasted from random repositories with no versioning, integrity checks or review step.",
+      system: "A CLI installs skills from a registry or straight from GitHub, records them in skills.json and skills.lock.json, verifies SHA-256 digests before extraction, and syncs them into Claude, Cursor, Codex and Antigravity. A Cloudflare Workers registry stores immutable releases, and a React portal handles discovery and publishing.",
+      outcome: "Reproducible, verified skill installs across agents, with a registry and web portal that can be self-hosted on Cloudflare's free tier.",
+      flow: ["Author & Pack", "Publish to Registry", "Verify & Lock", "Sync to Agents"],
+    },
+    details: [
+      "Agent skills are prompts and code that an AI agent trusts, yet they are copy-pasted from random repositories with no versioning, integrity checks or review step.",
+      "The skillapt CLI (Node.js 22, TypeScript) provides init, install, search, info, outdated, update, list, remove, login, logout, pack, publish, yank and doctor, with a skills.json manifest and skills.lock.json lockfile and install --frozen for CI.",
+      "The registry (Hono on Cloudflare Workers with D1, R2 and a Durable Object rate limiter) stores immutable releases, validates archives strictly and hashes API tokens before storing them.",
+      "The web portal (React 19, React Router 7, Vite, Tailwind CSS v4) offers fuzzy search with a command palette, skill pages, docs rendered from markdown, a publisher dashboard, and light and dark themes.",
+    ],
+    year: "2026",
+    status: "active",
+  },
+  {
     slug: "fatgs",
     name: "FATGS",
     tagline: "Academic timetable generation through structured scheduling and faculty allocation.",
@@ -139,24 +166,31 @@ export const projects: Project[] = [
 ];
 
 export const tools = {
+  languages: [
+    "TypeScript and JavaScript",
+    "Python",
+    "C and C++",
+  ],
   frontend: [
     "HTML and CSS",
-    "JavaScript and TypeScript",
-    "React",
     "Tailwind CSS",
+    "Bootstrap",
+    "React",
+    "EJS",
   ],
   backend: [
-    "C and C++",
-    "JavaScript and TypeScript",
     "Node.js",
     "Express.js",
     "MongoDB and Mongoose",
+    "Cloudflare Workers",
   ],
   infrastructure: [
     "Git and GitHub",
+    "Docker",
+    "Linux",
     "Postman",
     "Figma",
   ],
-  also: "C and C++, JavaScript and TypeScript, React, Node.js, Express.js, MongoDB and Mongoose, HTML and CSS, Tailwind CSS, Git and GitHub, Postman, and Figma.",
+  also: "TypeScript and JavaScript, Python, C and C++, HTML and CSS, Tailwind CSS, Bootstrap, React, EJS, Node.js, Express.js, MongoDB and Mongoose, Cloudflare Workers, Git and GitHub, Docker, Linux, Postman, and Figma.",
 } as const;
 

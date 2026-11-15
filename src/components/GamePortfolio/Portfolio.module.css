@@ -153,7 +153,6 @@
 :global([data-theme="light"]) .heatmap i[data-level="0"] { background:#e1e5d8; }
 :global([data-theme="light"]) .brand { color:#26332a; }
 .originCopy { min-width:0; }
-:global([data-theme="light"]) .stackGrid img:is([src*="fastify"],[src*="nextdotjs"],[src*="socketdotio"],[src*="mcp"],[src*="openai"],[src*="drizzle"]) { filter:brightness(.45); }
 
 .themeControl { display:inline-grid; place-items:center; width:36px; height:36px; padding:0; cursor:pointer; border-radius:50%; }
 .themeControl:hover { color:var(--accent); border-color:var(--accent); }

@@ -9,7 +9,7 @@ export type PipTrigger = "welcome" | "project" | "reading" | "compare" | "finish
 export type PipMood = "idle" | "wave" | "reading" | "curious" | "thinking" | "scrolling" | "celebrate" | "sleep" | "talking";
 export type PipNudge = { text: string; prompt: string; label: string; mood: PipMood; mode?: "ai" | "local" | "reaction" };
 export const eventKinds = new Set(["page", "section", "project", "project_details", "project_link", "blog_link", "story_link", "story_section", "screenshot_open", "resume", "contact", "chat_open", "question", "nudge_shown", "nudge_dismissed", "nudge_accepted", "tab_return"]);
-export const validPath = (value: unknown): value is string => typeof value === "string" && /^\/(?:work(?:\/(?:fatgs|tt_tracker|tt-tracker|prisms))?|blog(?:\/[a-z0-9-]+)?|stories\/(?:ai|journey)|testimonial|privacy)?$/.test(value);
+export const validPath = (value: unknown): value is string => typeof value === "string" && /^\/(?:work(?:\/(?:skillapt|fatgs|tt_tracker|tt-tracker|prisms))?|blog(?:\/[a-z0-9-]+)?|stories\/(?:ai|journey)|testimonial|privacy)?$/.test(value);
 export const validId = (value: unknown): value is string => typeof value === "string" && /^[a-f0-9-]{36}$/.test(value);
 export const cleanLabel = (value: unknown, max = 120) => typeof value === "string" ? value.replace(/[\u0000-\u001f]/g, "").replace(/\u2014/g, ", ").slice(0, max) : "";
 export const redactQuestion = (value: string) => cleanLabel(value, 600).replace(/sk-[\w.-]+/g, "[redacted key]").replace(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/gi, "[email]").replace(/(?:\+?\d[\d ()-]{8,}\d)/g, "[number]");

@@ -32,8 +32,16 @@ export function JournalFrame({ children }: { children: ReactNode }) {
 
 export const notes = [
   {
-    href: "/work/fatgs",
+    href: "/work/skillapt",
     number: "01",
+    kind: "Project",
+    title: "A Secure Package Manager for AI Agent Skills",
+    text: "CLI, registry API and web portal for installing, locking and publishing skills in skillapt.",
+    symbol: "▣",
+  },
+  {
+    href: "/work/fatgs",
+    number: "02",
     kind: "Project",
     title: "Faculty Allocation & Timetable Generation System",
     text: "Scheduling logic, constraints, and academic data modeling in FATGS.",
@@ -41,7 +49,7 @@ export const notes = [
   },
   {
     href: "/work/tt_tracker",
-    number: "02",
+    number: "03",
     kind: "Project",
     title: "Academic Timetable Tracking & Management",
     text: "Class and faculty schedule management and timetable change tracking in TT_TRACKER.",
@@ -49,7 +57,7 @@ export const notes = [
   },
   {
     href: "/work/prisms",
-    number: "03",
+    number: "04",
     kind: "Project",
     title: "PhD Research & Scholars Management System",
     text: "Structuring institutional workflows and thesis submission module in PRISMS.",
@@ -57,7 +65,7 @@ export const notes = [
   },
   {
     href: "/stories/journey",
-    number: "04",
+    number: "05",
     kind: "Background",
     title: "Learning by building",
     text: "Studying Computer Science at NIT Hamirpur and building practical backend systems.",
@@ -70,7 +78,7 @@ export function NotesIndex() {
     <JournalFrame>
       <main id="main-content" className={styles.index}>
         <div className={styles.titleBlock}>
-          <span className={styles.eyebrow}>THE BOOKSHELF / 4 ENTRIES</span>
+          <span className={styles.eyebrow}>THE BOOKSHELF / {notes.length} ENTRIES</span>
           <h1>Field notes.</h1>
           <p>
             What I built, what I learned,

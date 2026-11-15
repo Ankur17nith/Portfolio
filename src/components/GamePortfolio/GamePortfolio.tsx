@@ -933,8 +933,23 @@ export function GamePortfolio({ compact = false }: { compact?: boolean }) {
                       <section className={styles.experienceNote}>
                         <div>
                           <h3>
-                            FATGS <span>Featured</span>
+                            skillapt <span>Featured</span>
                           </h3>
+                          <small>Developer Tooling</small>
+                        </div>
+                        <p className={styles.noteRole}>
+                          A Secure Package Manager for AI Agent Skills
+                        </p>
+                        <p>
+                          A TypeScript CLI, a registry API on Cloudflare Workers, and a React web portal to install, lock, verify, pack and publish AI agent skills for Claude, Cursor, Codex and Antigravity.
+                        </p>
+                        <Link href="/work/skillapt">
+                          Explore project <ArrowUpRight size={15} />
+                        </Link>
+                      </section>
+                      <section className={styles.experienceNote}>
+                        <div>
+                          <h3>FATGS</h3>
                           <small>Academic Project</small>
                         </div>
                         <p className={styles.noteRole}>
@@ -1110,7 +1125,7 @@ export function GamePortfolio({ compact = false }: { compact?: boolean }) {
                       I&apos;m Ankur Gupta, a Computer Science student at the National Institute of Technology Hamirpur. I&apos;m interested in backend engineering, full-stack development, databases, and understanding how software systems work beyond the user interface.
                     </p>
                     <p>
-                      I enjoy learning through practical implementation and building applications that solve real problems. My projects include FATGS, TT_TRACKER, and PRISMS, which reflect my interest in academic scheduling, timetable management, and research administration software.
+                      I enjoy learning through practical implementation and building applications that solve real problems. My projects include skillapt, a secure package manager for AI agent skills, along with FATGS, TT_TRACKER, and PRISMS, which reflect my interest in developer tooling, academic scheduling, timetable management, and research administration software.
                     </p>
                     <p>
                       I&apos;m continuing to strengthen my programming fundamentals, backend development skills, and understanding of software architecture through hands-on projects.
